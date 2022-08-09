@@ -5,9 +5,9 @@ add_library(cam3d::cam3d ALIAS cam3d)
 target_compile_features(cam3d PUBLIC cxx_std_20)
 # ---Add source files---
 target_include_directories(cam3d PUBLIC include)
-target_sources(cam3d PRIVATE
-    src/cam3d.cpp
-)
+# target_sources(cam3d PRIVATE
+#     src/cam3d.cpp
+# )
 
 if (CAM3D_ENABLE_WARNINGS_AS_ERRORS)
     message("-- [cam3d] Enabling warnings as errors for cam3d")
