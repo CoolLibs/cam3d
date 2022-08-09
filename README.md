@@ -2,6 +2,19 @@
 
 TODO search for similar camera libraries, but I can't find any in C++!
 
+## Including
+
+To add this library to your project, simply add those two lines to your *CMakeLists.txt*:
+```cmake
+add_subdirectory(path/to/cmd)
+target_link_libraries(${PROJECT_NAME} PRIVATE cmd::cmd)
+```
+
+Then include it as:
+```cpp
+#include <cmd/cmd.hpp>
+```
+
 ## Camera Data
 
 View and Projection go together because they both contribute to define the camera frustum. This frustum is required by some controllers to make sure a point alwaysremain under the mouse (needs to project from 3D-world to screen), and by some operations (shooting a ray for a given pixel i nscreen-space)
@@ -25,3 +38,8 @@ ZOOMING IS A MULTIPLICATIVE OPERATION!
 #### AxisFree
 
 ### Freefly
+
+## Running the tests
+
+Simply use "tests/CMakeLists.txt" to generate a project, then run it.<br/>
+If you are using VSCode and the CMake extension, this project already contains a *.vscode/settings.json* that will use the right CMakeLists.txt automatically.
