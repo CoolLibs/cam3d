@@ -6,13 +6,13 @@ TODO search for similar camera libraries, but I can't find any in C++!
 
 To add this library to your project, simply add those two lines to your *CMakeLists.txt*:
 ```cmake
-add_subdirectory(path/to/cmd)
-target_link_libraries(${PROJECT_NAME} PRIVATE cmd::cmd)
+add_subdirectory(path/to/cam3d)
+target_link_libraries(${PROJECT_NAME} PRIVATE cam3d::cam3d)
 ```
 
 Then include it as:
 ```cpp
-#include <cmd/cmd.hpp>
+#include <cam3d/cam3d.hpp>
 ```
 
 ## Camera Data
