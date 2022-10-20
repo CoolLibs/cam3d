@@ -9,13 +9,19 @@ target_sources(cam3d PRIVATE
     src/cam3d.cpp
 )
 
-if (CAM3D_ENABLE_WARNINGS_AS_ERRORS)
-    message("-- [cam3d] Enabling warnings as errors for cam3d")
-    if(MSVC)
-        target_compile_options(cam3d PRIVATE /WX /W4)
-    else()
-        target_compile_options(cam3d PRIVATE -Werror -Wall -Wextra -Wpedantic -pedantic-errors -Wconversion -Wsign-conversion)
-    endif()
+# Set warning level
+if(MSVC)
+    target_compile_options(cam3d PRIVATE /W4)
 else()
-    message("-- [cam3d] Not using warnings as errors for cam3d")
+    target_compile_options(cam3d PRIVATE -Wall -Wextra -Wpedantic -pedantic-errors -Wconversion -Wsign-conversion)
+endif()
+
+# Maybe enable warnings as errors
+set(WARNINGS_AS_ERRORS_FOR_CAM3D OFF CACHE BOOL "ON iff you want to treat warnings as errors")
+if(WARNINGS_AS_ERRORS_FOR_CAM3D)
+    if(MSVC)
+        target_compile_options(cam3d PRIVATE /WX)
+    else()
+        target_compile_options(cam3d PRIVATE -Werror)
+    endif()
 endif()
