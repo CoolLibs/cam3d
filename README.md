@@ -17,7 +17,7 @@ Then include it as:
 
 ## Camera Data
 
-View and Projection go together because they both contribute to define the camera frustum. This frustum is required by some controllers to make sure a point alwaysremain under the mouse (needs to project from 3D-world to screen), and by some operations (shooting a ray for a given pixel i nscreen-space)
+View and Projection go together because they both contribute to define the camera frustum. This frustum is required by some controllers to make sure a point always remains under the mouse (needs to project from 3D-world to screen), and by some operations (shooting a ray for a given pixel in screen-space)
 
 ## Controler
 

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 
 add_library(cam3d)
 add_library(cam3d::cam3d ALIAS cam3d)
-target_compile_features(cam3d PUBLIC cxx_std_20)
+target_compile_features(cam3d PUBLIC cxx_std_17)
 # ---Add source files---
 target_include_directories(cam3d PUBLIC include)
 target_sources(cam3d PRIVATE
